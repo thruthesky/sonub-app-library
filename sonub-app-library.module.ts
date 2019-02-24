@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenuButtonComponent } from './components/menu-button/menu-button.component';
 import { FooterToolbarComponent } from './components/footer-toolbar/footer-toolbar.component';
+import { HeaderToolbarComponent } from './components/header-toolbar/header-toolbar.component';
 
 @NgModule({
     imports: [
@@ -15,12 +16,14 @@ import { FooterToolbarComponent } from './components/footer-toolbar/footer-toolb
     exports: [
         SideMenuComponent,
         MenuButtonComponent,
-        FooterToolbarComponent
+        FooterToolbarComponent,
+        HeaderToolbarComponent
     ],
     declarations: [
         SideMenuComponent,
         MenuButtonComponent,
-        FooterToolbarComponent
+        FooterToolbarComponent,
+        HeaderToolbarComponent
     ],
     providers: [],
 })
