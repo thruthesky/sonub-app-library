@@ -2,6 +2,14 @@
 
 Sonub App Library
 
+## Resources
+
+* See [Simple Sonub App](https://github.com/thruthesky/simple-sonub-app) for example.
+
+## Installation
+
+* Simple add as git submodule.
+
 ## How to use
 
 ### Footer Toolbar
@@ -10,7 +18,7 @@ Sonub App Library
 
 #### Opennning sidemenu
 
-* set `openSideMenu` to true to open the menu.
+* set `showSideMenu` to true to open the menu.
 
 #### Example of Menu
 
@@ -26,35 +34,36 @@ export class AppService {
         {
             title: '홈',
             icon: 'home',
-            url: '/'
+            url: '/home'
         },
         {
             title: '갤러리',
             icon: 'photos',
-            url: '/'
+            url: '/gallery'
         },
         {
             title: '게시판',
             icon: 'chatboxes',
-            url: '/'
+            url: '/fourm'
         },
         {
             title: '오시는길',
             icon: 'map',
-            url: '/'
+            url: '/map'
         },
         {
             title: '메뉴',
             icon: 'menu',
-            url: '/',
-            showSideMenu: true
+            openSideMenu: true
         }
     ];
     constructor() { }
 }
 ````
 
-* Use it on component
+* Use it on component.
+
+* `<app-footer-toolbar>` should be used in app component.
 
 ```` html
 <ion-footer class="app-footer">
@@ -62,4 +71,8 @@ export class AppService {
 </ion-footer>
 ````
 
-* Declare sidemenu
+#### Declare sidemenu.
+
+* You can add side menu settings on app service.
+
+* And add `<app-side-menu>` on app component.

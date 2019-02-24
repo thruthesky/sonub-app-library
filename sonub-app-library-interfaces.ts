@@ -2,7 +2,7 @@ export interface ToolbarMenu {
     title: string;
     icon: string;
     url?: string;
-    showSideMenu?: boolean;
+    openSideMenu?: boolean;
 }
 
 
@@ -11,4 +11,5 @@ export interface SideMenu {
     icon: string;
     url?: string;
     close?: boolean;
+    openWindow?: boolean;
 }

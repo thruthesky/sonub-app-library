@@ -35,7 +35,7 @@ export class FooterToolbarComponent implements OnInit {
       title: 'Mneu',
       icon: 'menu',
       url: '/',
-      showSideMenu: true
+      openSideMenu: true
     }
   ];
   constructor() { }

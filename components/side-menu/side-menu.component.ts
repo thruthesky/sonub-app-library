@@ -19,17 +19,19 @@ export class SideMenuComponent implements OnInit {
   ];
   constructor(
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
   }
 
-  onClick( menu: SideMenu) {
-    // routerLink="{{ menu.url }}"
-    if ( ! menu.close ) {
-      this.router.navigateByUrl( menu.url );
+  onClick(menu: SideMenu) {
+    if (menu.close) {
+    } else if (menu.openWindow) {
+      window.open(menu.url, '_blank');
+    } else {
+      this.router.navigateByUrl(menu.url);
     }
-  }
 
+  }
 }
 
