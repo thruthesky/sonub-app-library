@@ -7,10 +7,10 @@
   <ion-content>
     <ion-list>
       <ion-menu-toggle auto-hide="false" *ngFor="let menu of menus">
-        <ion-item [routerDirection]="'root'" routerLink="{{ menu.url }}">
+        <ion-item [routerDirection]="'root'" (click)=" onClick( menu ) ">
           <ion-icon slot="start" [name]="menu.icon"></ion-icon>
           <ion-label>
-            {{menu.name}}
+            {{menu.title}}
           </ion-label>
         </ion-item>
       </ion-menu-toggle>

@@ -1,11 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-interface AppMenu {
-  name: string;
-  url: string;
-  icon: string;
-}
-type AppMenus = AppMenu[];
+import { SideMenu } from 'sonub-app-library/sonub-app-library-interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
@@ -15,16 +10,25 @@ type AppMenus = AppMenu[];
 export class SideMenuComponent implements OnInit {
 
   @Input() contentId = '';
-  @Input() menus: AppMenus = [
+  @Input() menus: SideMenu[] = [
     {
-      name: 'No menu set',
+      title: 'No menu set',
       url: '/',
       icon: 'close'
     }
   ];
-  constructor() { }
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {
+  }
+
+  onClick( menu: SideMenu) {
+    // routerLink="{{ menu.url }}"
+    if ( ! menu.close ) {
+      this.router.navigateByUrl( menu.url );
+    }
   }
 
 }
