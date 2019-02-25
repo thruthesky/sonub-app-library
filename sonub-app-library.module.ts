@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { MenuButtonComponent } from './components/menu-button/menu-button.component';
 import { FooterToolbarComponent } from './components/footer-toolbar/footer-toolbar.component';
 import { HeaderToolbarComponent } from './components/header-toolbar/header-toolbar.component';
+import { SonubAppLibraryService } from './services/sonub-app-library.service';
 
 @NgModule({
     imports: [
@@ -25,7 +26,9 @@ import { HeaderToolbarComponent } from './components/header-toolbar/header-toolb
         FooterToolbarComponent,
         HeaderToolbarComponent
     ],
-    providers: [],
+    providers: [
+        SonubAppLibraryService
+    ],
 })
 export class SonubAppLibraryModule { }
 

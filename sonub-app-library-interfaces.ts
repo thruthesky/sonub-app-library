@@ -1,5 +1,7 @@
 export interface ToolbarMenu {
-    title: string;
+    title: {
+        [code: string]: string;
+    };
     icon: string;
     url?: string;
     openSideMenu?: boolean;
@@ -7,7 +9,9 @@ export interface ToolbarMenu {
 
 
 export interface SideMenu {
-    title: string;
+    title: {
+        [code: string]: string;
+    };
     icon: string;
     url?: string;
     close?: boolean;

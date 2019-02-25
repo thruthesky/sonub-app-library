@@ -12,27 +12,27 @@ export class FooterToolbarComponent implements OnInit {
 
   @Input() menus: ToolbarMenu[] = [
     {
-      title: 'Home',
+      title: { en: 'Home' },
       icon: 'home',
       url: '/'
     },
     {
-      title: 'Gallery',
+      title: { en: 'Gallery' },
       icon: 'photos',
       url: '/'
     },
     {
-      title: 'Contact',
+      title: { en: 'Contact', ko: '연락처' },
       icon: 'contact',
       url: '/'
     },
     {
-      title: 'Help',
+      title: { en: 'Help', ko: '도움말' },
       icon: 'help',
       url: '/'
     },
     {
-      title: 'Mneu',
+      title: { en: 'Mneu', ko: '메뉴' },
       icon: 'menu',
       url: '/',
       openSideMenu: true

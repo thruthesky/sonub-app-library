@@ -10,7 +10,7 @@
         <ion-item [routerDirection]="'root'" (click)=" onClick( menu ) ">
           <ion-icon slot="start" [name]="menu.icon"></ion-icon>
           <ion-label>
-            {{menu.title}}
+            {{ s.t( menu.title )}}
           </ion-label>
         </ion-item>
       </ion-menu-toggle>
