@@ -7,11 +7,13 @@ import { MenuButtonComponent } from './components/menu-button/menu-button.compon
 import { FooterToolbarComponent } from './components/footer-toolbar/footer-toolbar.component';
 import { HeaderToolbarComponent } from './components/header-toolbar/header-toolbar.component';
 import { SonubAppLibraryService } from './services/sonub-app-library.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
+        HttpClientModule,
         IonicModule
     ],
     exports: [

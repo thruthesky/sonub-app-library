@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { settingTexts } from 'sonub-app-library/locales/settings';
 import { basicTexts } from 'sonub-app-library/locales/basic';
+import { HttpClient } from '@angular/common/http';
 /**
  * How to use language translation
  * @example
@@ -23,14 +24,16 @@ export class SonubAppLibraryService {
 
     texts = {};
     languageCode = '';
-    constructor() {
+    constructor(
+        private http: HttpClient
+    ) {
         this.languageCode = this.getBrowserLanguage();
         const lc = this.getUserLanguage();
-        if ( lc ) {
+        if (lc) {
             this.languageCode = lc;
         }
-        this.addLanguageText( basicTexts );
-        this.addLanguageText( settingTexts );
+        this.addLanguageText(basicTexts);
+        this.addLanguageText(settingTexts);
     }
     /**
      * Returns browser language
@@ -228,6 +231,21 @@ export class SonubAppLibraryService {
 
 
 
+
+
+
+
+    /**
+     * Geta post
+     * @param idx idx or access code.
+     */
+    postGet(idx: string) {
+        const url = 'https://api.sonub.com/api.php?run=post.get&idx=' + idx;
+        console.log('url: ', url);
+        this.http.get(url).subscribe(res => {
+            console.log('post.get: ', res);
+        }, e => console.error(e));
+    }
 
 
 
