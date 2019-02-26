@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { settingTexts } from 'sonub-app-library/locales/settings';
+import { basicTexts } from 'sonub-app-library/locales/basic';
 /**
  * How to use language translation
  * @example
@@ -28,9 +29,8 @@ export class SonubAppLibraryService {
         if ( lc ) {
             this.languageCode = lc;
         }
-        console.log('l', settingTexts);
+        this.addLanguageText( basicTexts );
         this.addLanguageText( settingTexts );
-        console.log('texts', this.texts);
     }
     /**
      * Returns browser language
