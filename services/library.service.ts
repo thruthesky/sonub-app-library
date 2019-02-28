@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { settingTexts } from 'sonub-app-library/locales/settings';
 import { basicTexts } from 'sonub-app-library/locales/basic';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 /**
  * How to use language translation
  * @example
@@ -21,20 +19,13 @@ import { Observable } from 'rxjs';
  */
 const LANGUAGE_CODE = 'language_code';
 
-interface PostQueryOption {
-    fields: string;
-    where: string;
-    orderby?: string;
-    limit: string;
-}
 
 @Injectable()
-export class SonubAppLibraryService {
+export class LibraryService {
 
     texts = {};
     languageCode = '';
     constructor(
-        private http: HttpClient
     ) {
         this.languageCode = this.getBrowserLanguage();
         const lc = this.getUserLanguage();
@@ -237,53 +228,6 @@ export class SonubAppLibraryService {
         this.set(LANGUAGE_CODE, code);
         this.languageCode = code;
     }
-
-
-
-
-
-
-
-    /**
-     * Geta post
-     * @param idx idx or access code.
-     * @example
-     *  s.postGet('gallery-1-evieco.shop').subscribe(res => {
-     *    console.log('post.get: ', res);
-     *  }, e => console.error(e));
-     */
-    postGet(idx: string): Observable<any> {
-        const url = 'https://api.sonub.com/api.php?run=post.get&idx=' + idx;
-        console.log('url: ', url);
-        return this.http.get(url);
-    }
-
-    /**
-     * post query
-     * @param options options
-     * @example
-     * s.postQuery({
-     *   fields: '*',
-     *   where: `taxonomy='sites' AND relation=${this.settings.siteIdx} AND access_code LIKE 'gallery-%'`,
-     *   limit: '10',
-     *   orderby: 'access_code asc'
-     *  }).subscribe(res => {
-     *      console.log('post.query: ', res);
-     *  }, e => console.error(e));
-     */
-    postQuery(options: PostQueryOption): Observable<any> {
-        let url = `https://api.sonub.com/api.php?run=post.query` +
-            `&fields=${options.fields}` +
-            `&where=${options.where}` +
-            `&limit=${options.limit}`
-            ;
-        if (options.orderby) {
-            url += '&orderby=' + options.orderby;
-        }
-        console.log('url: ', url);
-        return this.http.get(url);
-    }
-
 
 
 }

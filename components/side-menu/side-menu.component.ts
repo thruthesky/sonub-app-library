@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SideMenu } from 'sonub-app-library/sonub-app-library-interfaces';
 import { Router } from '@angular/router';
-import { SonubAppLibraryService } from 'sonub-app-library/services/sonub-app-library.service';
+import { AppService } from 'src/app/services/app.service';
+
 
 @Component({
   selector: 'app-side-menu',
@@ -20,7 +21,7 @@ export class SideMenuComponent implements OnInit {
   ];
   constructor(
     private router: Router,
-    public s: SonubAppLibraryService
+    public a: AppService
   ) {
   }
 

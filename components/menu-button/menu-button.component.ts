@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ToolbarMenu } from 'sonub-app-library/sonub-app-library-interfaces';
 import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { SonubAppLibraryService } from 'sonub-app-library/services/sonub-app-library.service';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-menu-button',
@@ -15,7 +15,7 @@ export class MenuButtonComponent implements OnInit {
   constructor(
     private router: Router,
     private menuController: MenuController,
-    public s: SonubAppLibraryService
+    public a: AppService
   ) { }
 
   ngOnInit() {
