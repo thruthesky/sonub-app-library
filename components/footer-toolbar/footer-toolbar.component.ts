@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ToolbarMenu } from 'sonub-app-library/sonub-app-library-interfaces';
+import { ToolbarMenu } from 'modules/sonub-app-library/sonub-app-library-interfaces';
 
 
 @Component({

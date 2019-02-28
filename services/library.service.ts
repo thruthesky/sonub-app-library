@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { settingTexts } from 'sonub-app-library/locales/settings';
-import { basicTexts } from 'sonub-app-library/locales/basic';
+import { settingTexts } from 'modules/sonub-app-library/locales/settings';
+import { basicTexts } from 'modules/sonub-app-library/locales/basic';
 /**
  * How to use language translation
  * @example

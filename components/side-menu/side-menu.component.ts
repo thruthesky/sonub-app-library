@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SideMenu } from 'sonub-app-library/sonub-app-library-interfaces';
+import { SideMenu } from 'modules/sonub-app-library/sonub-app-library-interfaces';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/services/app.service';
 
