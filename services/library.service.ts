@@ -19,16 +19,22 @@ import { basicTexts } from 'modules/sonub-app-library/locales/basic';
  */
 const LANGUAGE_CODE = 'language_code';
 
+type LanguageCode = string | 'ko' | 'en' | 'jp' | 'ch';
 
 @Injectable()
 export class LibraryService {
 
     texts = {};
-    languageCode = '';
+    /**
+     * This is the language code for displaying language in view.
+     * You can chagne it in realtime and the text changes in realtime also.
+     * When you want to chagne language, simply chagne the value of this var.
+     */
+    languageCode: LanguageCode = null;
     constructor(
     ) {
-        this.languageCode = this.getBrowserLanguage();
-        const lc = this.getUserLanguage();
+        this.languageCode = <any> this.getBrowserLanguage();
+        const lc = <any> this.getUserLanguage();
         if (lc) {
             this.languageCode = lc;
         }
@@ -224,7 +230,7 @@ export class LibraryService {
         }
     }
 
-    setUserLanguage(code: string) {
+    setUserLanguage(code: any) {
         this.set(LANGUAGE_CODE, code);
         this.languageCode = code;
     }
