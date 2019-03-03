@@ -22,6 +22,11 @@ export class FooterToolbarComponent implements OnInit {
       url: '/'
     },
     {
+      title: { en: 'Forum' },
+      icon: 'comments',
+      url: '/'
+    },
+    {
       title: { en: 'Contact', ko: '연락처' },
       icon: 'contact',
       url: '/'

@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenuButtonComponent } from './components/menu-button/menu-button.component';
 import { FooterToolbarComponent } from './components/footer-toolbar/footer-toolbar.component';
-import { HeaderToolbarComponent } from './components/header-toolbar/header-toolbar.component';
 import { LibraryService } from './services/library.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -19,14 +18,12 @@ import { HttpClientModule } from '@angular/common/http';
     exports: [
         SideMenuComponent,
         MenuButtonComponent,
-        FooterToolbarComponent,
-        HeaderToolbarComponent
+        FooterToolbarComponent
     ],
     declarations: [
         SideMenuComponent,
         MenuButtonComponent,
-        FooterToolbarComponent,
-        HeaderToolbarComponent
+        FooterToolbarComponent
     ],
     providers: [
         LibraryService
