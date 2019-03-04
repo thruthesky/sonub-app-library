@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ToolbarMenu } from 'modules/sonub-app-library/sonub-app-library-interfaces';
+import { AppService } from 'src/app/services/app.service';
+import { MenuController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -43,11 +46,23 @@ export class FooterToolbarComponent implements OnInit {
       openSideMenu: true
     }
   ];
-  constructor() { }
+  constructor(
+    private router: Router,
+    private menuController: MenuController,
+    public a: AppService
+  ) { }
 
   ngOnInit() {
   }
 
+  onClick(menu) {
+    // console.log('menu click on', this.menu);
+    if (menu.openSideMenu) {
+      this.menuController.open();
+    } else {
+      this.router.navigateByUrl(menu.url);
+    }
+  }
 }
 
 
