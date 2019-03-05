@@ -3,6 +3,7 @@ import { ToolbarMenu } from 'modules/sonub-app-library/sonub-app-library-interfa
 import { AppService } from 'src/app/services/app.service';
 import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { AppSettingFooterMenu } from 'src/app/services/interfaces';
 
 
 @Component({
@@ -55,12 +56,12 @@ export class FooterToolbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick(menu) {
+  onClick(menu: AppSettingFooterMenu, i: number) {
     // console.log('menu click on', this.menu);
     if (menu.openSideMenu) {
       this.menuController.open();
     } else {
-      this.router.navigateByUrl(menu.url);
+      this.router.navigate([menu.url], { queryParams: { i: i } });
     }
   }
 }
