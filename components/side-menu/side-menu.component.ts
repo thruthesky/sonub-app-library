@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SideMenu } from 'modules/sonub-app-library/sonub-app-library-interfaces';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/services/app.service';
+import { AppSettingSideMenu } from 'src/app/services/interfaces';
 
 
 @Component({
@@ -12,13 +12,6 @@ import { AppService } from 'src/app/services/app.service';
 export class SideMenuComponent implements OnInit {
 
   @Input() contentId = '';
-  @Input() menus: SideMenu[] = [
-    {
-      title: { en: 'No menu set', ko: '' },
-      url: '/',
-      icon: 'close'
-    }
-  ];
   constructor(
     private router: Router,
     public a: AppService
@@ -28,7 +21,7 @@ export class SideMenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick(menu: SideMenu) {
+  onClick(menu: AppSettingSideMenu) {
     if (menu.close) {
     } else if (menu.openWindow) {
       window.open(menu.url, '_blank');
@@ -38,4 +31,5 @@ export class SideMenuComponent implements OnInit {
 
   }
 }
+
 

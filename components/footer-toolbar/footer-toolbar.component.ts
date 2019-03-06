@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ToolbarMenu } from 'modules/sonub-app-library/sonub-app-library-interfaces';
 import { AppService } from 'src/app/services/app.service';
 import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -14,7 +13,7 @@ import { AppSettingFooterMenu } from 'src/app/services/interfaces';
 export class FooterToolbarComponent implements OnInit {
 
 
-  @Input() menus: ToolbarMenu[] = [
+  @Input() menus: AppSettingFooterMenu[] = [
     {
       title: { en: 'Home' },
       icon: 'home',

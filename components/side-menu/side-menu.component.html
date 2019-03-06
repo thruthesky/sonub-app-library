@@ -7,13 +7,15 @@
   <ion-content>
 
     <ion-list>
-      <ion-menu-toggle auto-hide="false" *ngFor="let menu of menus">
+
+      <ion-menu-toggle auto-hide="false" *ngFor="let menu of a.settings.whenSideMenus">
         <ion-item [routerDirection]="'root'" (click)=" onClick( menu ) ">
           <ion-icon slot="start" [name]="menu.icon"></ion-icon>
           <ion-label>
             {{ a.t( menu.title ) }}
           </ion-label>
         </ion-item>
+
       </ion-menu-toggle>
     </ion-list>
 

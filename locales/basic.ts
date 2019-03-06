@@ -1,6 +1,9 @@
 export const basicTexts = {
     home: { en: 'Home', ko: '홈', ch: '第一页', jp: '一ページ目' },
     login: { en: 'Login', ko: '로그인', ch: '登录', jp: 'ログイン' },
+    logout: { en: 'Logout', ko: '로그아웃', ch: '登出', jp: 'ログアウト' },
+    register: { en: 'Register', ko: '회원가입', ch: '寄存器', jp: '登録' },
+    profile: { en: 'Profile', ko: '회원 정보 수정', ch: '资料更新', jp: 'プロファイル更新' },
     close: { en: 'Close', ko: '닫기', ch: '关', jp: '閉じる' },
     setting: { en: 'Settings', ko: '설정', ch: '设置', jp: '設定' },
     facebook: { en: 'Facebook', ko: '페이스북', ch: 'Facebook', jp: 'Facebook' },
