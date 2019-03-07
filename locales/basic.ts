@@ -19,6 +19,14 @@ export const basicTexts = {
         ko: '내 위치를 찾습니다. 잠시만 기다려 주세요.',
         ch: '请耐心等待 ...',
         jp: 'お待ちください ...'
-    }
+    },
 
+
+    /** Error */
+    email_in_use: {
+        en: 'The email you entered is already registered. If it is your email, then just login.',
+        ko: '입력하신 이메일 주소는 이미 가입되어져 있습니다. 만약 회원님의 메일 주소라면 로그인을 해 보세요.',
+        ch: '您输入的电子邮件已经注册。 如果是您的电子邮件，那么只需登录即可。',
+        jp: '入力したメールアドレスは既に登録されています。 それがあなたのEメールの場合は、ログインしてください。'
+    }
 };
